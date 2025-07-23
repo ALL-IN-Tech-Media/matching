@@ -67,3 +67,6 @@ matching/
 
 ---
 如有问题或需求，欢迎 issue 或联系开发者。 
+
+服务端启动：
+gunicorn -w 1 -b 0.0.0.0:5000 matching.video_to_text_server:app --timeout 600
