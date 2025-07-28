@@ -1,0 +1,35 @@
+{
+  "1.mp4": {
+    "result": "Skin Tone: Medium\nGender: Female\nEthnicity: Latino\nLanguage: Not specified\nCouple Appears?: No\nPet Appears?: No\nChild Appears?: No"
+  },
+  "2.mp4": {
+    "result": "Skin Tone: Medium\nGender: Female\nEthnicity: Latino\nLanguage: English\nCouple Appears?: No\nPet Appears?: No\nChild Appears?: No"
+  },
+  "3.mp4": {
+    "result": "Skin Tone: Medium\nGender: Female\nEthnicity: Latino\nLanguage: English\nCouple Appears?: No\nPet Appears?: No\nChild Appears?: No"
+  },
+  "4.mp4": {
+    "result": "Skin Tone: Medium\nGender: Female\nEthnicity: Latino\nLanguage: Spanish\nCouple Appears?: No\nPet Appears?: No\nChild Appears?: No"
+  },
+  "5.mp4": {
+    "result": "Skin Tone: Medium\nGender: Male & Female\nEthnicity: Latino\nLanguage: Spanish\nCouple Appears?: Yes\nPet Appears?: No\nChild Appears?: No"
+  },
+  "6.mp4": {
+    "result": "Skin Tone: Light\nGender: Male\nEthnicity: White\nLanguage: English\nCouple Appears?: No\nPet Appears?: No\nChild Appears?: No"
+  },
+  "7.mp4": {
+    "result": "Skin Tone: Dark\nGender: Male\nEthnicity: Black\nLanguage: English\nCouple Appears?: No\nPet Appears?: No\nChild Appears?: No"
+  },
+  "8.mp4": {
+    "result": "Skin Tone: Light  \nGender: Female  \nEthnicity: White  \nLanguage: English  \nCouple Appears?: No  \nPet Appears?: No  \nChild Appears?: Yes  "
+  },
+  "9.mp4": {
+    "result": "Skin Tone: Medium  \nGender: Female  \nEthnicity: Latino  \nLanguage: English  \nCouple Appears?: No  \nPet Appears?: No  \nChild Appears?: No  "
+  },
+  "10.mp4": {
+    "result": "Skin Tone: Light  \nGender: Male  \nEthnicity: White  \nLanguage: English  \nCouple Appears?: No  \nPet Appears?: No  \nChild Appears?: No  "
+  },
+  "11.mp4": {
+    "result": "Skin Tone: Light\nGender: Female\nEthnicity: White\nLanguage: English\nCouple Appears?: No\nPet Appears?: No\nChild Appears?: No"
+  }
+}

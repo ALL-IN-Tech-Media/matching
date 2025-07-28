@@ -1,6 +1,7 @@
 import sys
 import os
 import json
+import torch
 from matching.video_to_text import video_to_text
 from flask import Flask, request, jsonify
 
@@ -18,6 +19,15 @@ def get_prompt(prompt_id="0"):
     prompts = load_prompts()
     return prompts.get(str(prompt_id), prompts["0"])["prompt"]
 
+def cleanup_cache():
+    """清理GPU缓存"""
+    try:
+        if torch.cuda.is_available():
+            torch.cuda.empty_cache()
+            torch.cuda.ipc_collect()
+    except Exception as e:
+        print(f"GPU memory cleanup failed: {e}")
+
 app = Flask(__name__)
 
 @app.route("/video_to_text", methods=["POST"])
@@ -28,7 +38,7 @@ def handle_video_to_text():
     custom_prompt = data.get("prompt")  # 允许自定义prompt
     max_new_tokens = int(data.get("max_new_tokens", 1024))
     
-    if not video_path or not os.path.exists(video_path):
+    if not video_path or (not video_path.startswith("http") and not os.path.exists(video_path)):
         return jsonify({"error": "video_path is required and must exist."}), 400
     
     # 使用自定义prompt或从JSON文件获取prompt
@@ -41,8 +51,12 @@ def handle_video_to_text():
     
     try:
         result = video_to_text(video_path, prompt=prompt, max_new_tokens=max_new_tokens)
+        # 请求完成后清理缓存
+        cleanup_cache()
         return jsonify({"result": result})
     except Exception as e:
+        # 即使出错也要清理缓存
+        cleanup_cache()
         return jsonify({"error": str(e)}), 500
 
 @app.route("/prompts", methods=["GET"])
